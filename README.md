@@ -40,42 +40,45 @@ A real-time status page application that allows organizations to monitor and dis
 Create a .env file in the backend directory with:
 
 env
+```sh
 MONGODB_URI=your_mongodb_connection_string
 PORT=5050 (optional, defaults to 5050)
+```
 
 Create a .env file in the client directory with:
-
-env
+```sh
 REACT_APP_CLERK_PUBLISHABLE_KEY=your_publishable_clerk_string
-
+```
 
 ## Installation & Setup
 
 1. Clone the repository:
-bash
+```sh
 git clone <repository-url>
 cd <repository-name>
-
+```
 
 2. Install dependencies and build the client:
-bash
+```sh
 cd client
 npm install
 npm run build
-
+```
 
 3. Install backend dependencies:
-bash
+```sh
 cd ../backend
 npm install
+```
 
 
 ## Running the Application
 
 1. Start the server:
-bash
+```sh
 cd backend
 npm start
+```
 
 
 The application will be available at http://localhost:5050
