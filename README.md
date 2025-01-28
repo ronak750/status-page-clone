@@ -1,23 +1,33 @@
 # Status Page Application
 
-A real-time status page application built with React, Node.js, and WebSocket for live updates.
+A real-time status page application that allows organizations to monitor and display the health of their services.
 
 ## Features
 
-- Real-time status updates using WebSocket
-- Service status monitoring
-- Incident management
-- Public status page
-- Team management
-- Authentication using Clerk
+- Real-time service status updates
+- Incident management with updates
+- Public status page for each organization
+- 90-day status history timeline
+- WebSocket-based real-time updates
 
 ## Tech Stack
 
-- Frontend: React, TailwindCSS
-- Backend: Node.js, Express
-- Database: MongoDB
-- Real-time: Socket.io
-- Authentication: Clerk
+### Frontend
+- React.js
+- TailwindCSS for styling
+- Socket.io-client for real-time updates
+- Axios for API requests
+
+### Backend
+- Node.js with Express
+- MongoDB with Mongoose
+- Socket.io for WebSocket server
+- JWT for authentication
+
+### DevOps
+- Node.js >= 18.16.0
+- npm for package management
+- Build process with Create React App
 
 ## Prerequisites
 
@@ -25,85 +35,62 @@ A real-time status page application built with React, Node.js, and WebSocket for
 - MongoDB
 - npm or yarn
 
-## Installation
+## Environment Variables
+
+Create a .env file in the backend directory with:
+
+env
+MONGODB_URI=your_mongodb_connection_string
+PORT=5050 (optional, defaults to 5050)
+
+Create a .env file in the client directory with:
+
+env
+REACT_APP_CLERK_PUBLISHABLE_KEY=your_publishable_clerk_string
+
+
+## Installation & Setup
 
 1. Clone the repository:
-```bash
-git clone [your-repo-url]
-cd [your-repo-name]
-```
+bash
+git clone <repository-url>
+cd <repository-name>
 
-2. Install dependencies:
-```bash
-# Install backend dependencies
+
+2. Install dependencies and build the client:
+bash
+cd client
+npm install
+npm run build
+
+
+3. Install backend dependencies:
+bash
+cd ../backend
+npm install
+
+
+## Running the Application
+
+1. Start the server:
+bash
 cd backend
-npm install
+npm start
 
-# Install frontend dependencies
-cd ../client
-npm install
-```
 
-3. Set up environment variables:
+The application will be available at http://localhost:5050
 
-Backend (.env):
-```
-NODE_ENV=production
-PORT=5050
-MONGODB_URI=your_mongodb_uri
-```
+## Development
 
-Frontend (.env):
-```
-REACT_APP_CLERK_PUBLISHABLE_KEY=your_clerk_key
-```
+For development with hot-reloading:
 
-4. Start the application:
-
-Development:
-```bash
-# Start backend
+1. Start the backend:
+bash
 cd backend
 npm run dev
 
-# Start frontend
+
+2. In a separate terminal, start the client:
+bash
 cd client
 npm start
-```
-
-Production:
-```bash
-# Build frontend
-cd client
-npm run build
-
-# Start backend
-cd ../backend
-npm start
-```
-
-## Deployment
-
-1. Frontend:
-- Build the React app: `cd client && npm run build`
-- Deploy the `build` folder to your hosting service (Netlify, Vercel, etc.)
-
-2. Backend:
-- Deploy to your preferred hosting (Heroku, DigitalOcean, AWS, etc.)
-- Set up environment variables on your hosting platform
-- Ensure MongoDB connection string is properly configured
-
-## Environment Variables
-
-Backend:
-- `NODE_ENV`: production/development
-- `PORT`: Server port
-- `MONGODB_URI`: MongoDB connection string
-
-Frontend:
-- `REACT_APP_CLERK_PUBLISHABLE_KEY`: Clerk authentication key
-- `REACT_APP_API_URL`: Backend API URL
-
-## License
-
-[Your License]

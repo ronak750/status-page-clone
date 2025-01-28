@@ -113,9 +113,7 @@ const PublicStatus = () => {
                 const index = updatedIncidents[dateKey].findIndex(
                   (inc) => inc._id?.toString() === update.incident._id?.toString()
                 );
-                console.log(index);
                 if (index !== -1) {
-                  console.log("Hey");
                   console.log(updatedIncidents[dateKey][index]);
                   // Format incident to match public route format
                   updatedIncidents[dateKey][index] = update.incident;
